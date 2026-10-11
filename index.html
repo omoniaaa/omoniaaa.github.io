@@ -11,12 +11,15 @@
 </head>
 <body class="light">
     <header class="topbar">
-        <div class="logo">Spider<span>Verse</span></div>
+        <!-- Логотип теперь перезагружает страницу (ведет на главную) -->
+        <a href="index.html" class="logo">Spider<span>Verse</span></a>
+        
         <nav class="nav" aria-label="Main navigation">
-            <a href="#home">Home</a>
-            <a href="#story">Story</a>
-            <a href="#movies">Movies</a>
-            <a href="#quote">Quote</a>
+            <!-- Каждая ссылка ведет на «разные сайты» или разные страницы с перезагрузкой -->
+            <a href="index.html">Home</a>
+            <a href="https://www.marvel.com" target="_self">Marvel</a>
+            <a href="https://www.sony.com" target="_self">Sony</a>
+            <a href="https://www.imdb.com" target="_self">IMDb</a>
             <button class="nav-button theme-btn" id="themeToggle" type="button">Dark Mode</button>
         </nav>
     </header>
@@ -31,8 +34,9 @@
                     brave, and unforgettable.
                 </p>
                 <div class="hero-actions">
-                    <button class="primary-btn" id="trailerBtn" type="button">Watch trailer</button>
-                    <button class="secondary-btn" id="scrollBtn" type="button">Explore the story</button>
+                    <!-- Кнопки с помощью JS будут перенаправлять на разные сайты с перезагрузкой -->
+                    <button class="primary-btn" id="trailerBtn" type="button" data-url="https://www.youtube.com/watch?v=atMuz_ENb70">Watch trailer</button>
+                    <button class="secondary-btn" id="scrollBtn" type="button" data-url="https://en.wikipedia.org/wiki/Andrew_Garfield">Explore the story</button>
                 </div>
 
                 <div class="stats">
@@ -53,7 +57,7 @@
 
             <div class="hero-visual" aria-label="Spider-Man poster image">
                 <div class="poster-frame">
-                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80" alt="Spider-Man in the city" />
+                    <img src="https://thumb.wikimedia.org/wikipedia/en/thumb/d/df/Andrew_Garfield_as_Spider-Man.jpg/250px-Andrew_Garfield_as_Spider-Man.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail alt="Spider-Man in the city" />
                     <div class="floating-badge">Peter Parker</div>
                 </div>
             </div>
@@ -113,7 +117,8 @@
                         <p>
                             A fresh start, a deeper emotional story, and a Peter Parker who truly felt like a person.
                         </p>
-                        <button class="card-button" type="button" data-fulltext="This film reintroduced Spider-Man with a focus on Peter's personal journey, his connection with Gwen Stacy, and the idea that being a hero is as much about heart as power.">
+                        <!-- Кнопка перезагружает страницу с переходом на сторонний ресурс или другую страницу -->
+                        <button class="card-button" type="button" onclick="window.location.href='https://www.imdb.com/title/tt2582802/'">
                             Read more
                         </button>
                     </div>
@@ -127,7 +132,7 @@
                         <p>
                             Bigger action, deeper emotion, and a finale that made the stakes feel painfully real.
                         </p>
-                        <button class="card-button" type="button" data-fulltext="The sequel explored responsibility, broken promises, and how difficult it is to carry hope when everything feels heavy. The emotional weight is what keeps fans revisiting it.">
+                        <button class="card-button" type="button" onclick="window.location.href='https://www.imdb.com/title/tt1872181/'">
                             Read more
                         </button>
                     </div>
@@ -138,13 +143,14 @@
         <section class="quote-section" id="quote">
             <div class="quote-box">
                 <p class="quote-text" id="quoteText">“With great power comes great responsibility.”</p>
-                <button class="primary-btn" type="button" id="nextQuoteBtn">Next quote</button>
+                <!-- Кнопка просто перезагружает текущую страницу (обновляет сайт) -->
+                <button class="primary-btn" type="button" onclick="location.reload()">Refresh Page</button>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>Made for a Spider-Man fan project.</p>
+        <p>Made for a Spider-Man fan project. <a href="index.html" style="color: inherit;">Reload project</a></p>
     </footer>
 
     <div class="modal hidden" id="trailerModal" aria-hidden="true">
@@ -155,7 +161,7 @@
             <p>
                 This version of Peter Parker brings humor, heartbreak, and a very human kind of courage.
             </p>
-            <a href="https://www.youtube.com/results?search_query=andrew+garfield+spider+man+trailer" target="_blank" rel="noreferrer">Open trailer search</a>
+            <a href="https://www.youtube.com/results?search_query=andrew+garfield+spider+man+trailer" target="_self">Open trailer search</a>
         </div>
     </div>
 
